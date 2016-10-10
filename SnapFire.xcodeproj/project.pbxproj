@@ -7,21 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		519A909914842251AFD83E45 /* Pods_SnapFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C2D7860805D4899A112579 /* Pods_SnapFire.framework */; };
 		D04C87781DA68C9000AF7C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C87771DA68C9000AF7C7D /* AppDelegate.swift */; };
-		D04C877A1DA68C9000AF7C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C87791DA68C9000AF7C7D /* ViewController.swift */; };
+		D04C877A1DA68C9000AF7C7D /* TurnUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C87791DA68C9000AF7C7D /* TurnUpViewController.swift */; };
 		D04C877D1DA68C9000AF7C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04C877B1DA68C9000AF7C7D /* Main.storyboard */; };
 		D04C877F1DA68C9000AF7C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04C877E1DA68C9000AF7C7D /* Assets.xcassets */; };
 		D04C87821DA68C9000AF7C7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04C87801DA68C9000AF7C7D /* LaunchScreen.storyboard */; };
+		D04C878A1DA68F4600AF7C7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D04C87891DA68F4600AF7C7D /* GoogleService-Info.plist */; };
+		D0754E531DABC4C400D7F6D7 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0754E521DABC4C400D7F6D7 /* SnapsViewController.swift */; };
+		D0754E561DABC8D200D7F6D7 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0754E551DABC8D200D7F6D7 /* PictureViewController.swift */; };
+		D0754E581DABEFBD00D7F6D7 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0754E571DABEFBD00D7F6D7 /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D009B03A1DABB91300CFD3FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D009B0361DABB91300CFD3FE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77DF5F224B8FA87B8F1AA050E5E97839;
+			remoteInfo = "Pods-SnapFire";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		33C2D7860805D4899A112579 /* Pods_SnapFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5692D7EA1ABC0ADD6286165C /* Pods-SnapFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapFire/Pods-SnapFire.debug.xcconfig"; sourceTree = "<group>"; };
+		BE16039DC61BEB05D607D85A /* Pods-SnapFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapFire.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapFire/Pods-SnapFire.release.xcconfig"; sourceTree = "<group>"; };
+		D009B0361DABB91300CFD3FE /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		D04C87741DA68C9000AF7C7D /* SnapFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04C87771DA68C9000AF7C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D04C87791DA68C9000AF7C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D04C87791DA68C9000AF7C7D /* TurnUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnUpViewController.swift; sourceTree = "<group>"; };
 		D04C877C1DA68C9000AF7C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D04C877E1DA68C9000AF7C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D04C87811DA68C9000AF7C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D04C87831DA68C9000AF7C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D04C87891DA68F4600AF7C7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0754E521DABC4C400D7F6D7 /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		D0754E551DABC8D200D7F6D7 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		D0754E571DABEFBD00D7F6D7 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +52,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				519A909914842251AFD83E45 /* Pods_SnapFire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57C693B78EA59F392589BA59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5692D7EA1ABC0ADD6286165C /* Pods-SnapFire.debug.xcconfig */,
+				BE16039DC61BEB05D607D85A /* Pods-SnapFire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76964F1AA3709B46055D9260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33C2D7860805D4899A112579 /* Pods_SnapFire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D009B0371DABB91300CFD3FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D009B03B1DABB91300CFD3FE /* Pods_SnapFire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D04C876B1DA68C9000AF7C7D = {
 			isa = PBXGroup;
 			children = (
 				D04C87761DA68C9000AF7C7D /* SnapFire */,
 				D04C87751DA68C9000AF7C7D /* Products */,
+				57C693B78EA59F392589BA59 /* Pods */,
+				D009B0361DABB91300CFD3FE /* Pods.xcodeproj */,
+				76964F1AA3709B46055D9260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +107,15 @@
 			isa = PBXGroup;
 			children = (
 				D04C87771DA68C9000AF7C7D /* AppDelegate.swift */,
-				D04C87791DA68C9000AF7C7D /* ViewController.swift */,
+				D0754E551DABC8D200D7F6D7 /* PictureViewController.swift */,
+				D0754E521DABC4C400D7F6D7 /* SnapsViewController.swift */,
+				D04C87791DA68C9000AF7C7D /* TurnUpViewController.swift */,
+				D0754E571DABEFBD00D7F6D7 /* UsersViewController.swift */,
 				D04C877B1DA68C9000AF7C7D /* Main.storyboard */,
 				D04C877E1DA68C9000AF7C7D /* Assets.xcassets */,
 				D04C87801DA68C9000AF7C7D /* LaunchScreen.storyboard */,
 				D04C87831DA68C9000AF7C7D /* Info.plist */,
+				D04C87891DA68F4600AF7C7D /* GoogleService-Info.plist */,
 			);
 			path = SnapFire;
 			sourceTree = "<group>";
@@ -71,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D04C87861DA68C9000AF7C7D /* Build configuration list for PBXNativeTarget "SnapFire" */;
 			buildPhases = (
+				6BA40E5179C173B087A3939D /* [CP] Check Pods Manifest.lock */,
 				D04C87701DA68C9000AF7C7D /* Sources */,
 				D04C87711DA68C9000AF7C7D /* Frameworks */,
 				D04C87721DA68C9000AF7C7D /* Resources */,
+				5A72FE9BD3B3260734433D91 /* [CP] Embed Pods Frameworks */,
+				FE1E293C4E18C40B018DFD79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -112,6 +171,12 @@
 			mainGroup = D04C876B1DA68C9000AF7C7D;
 			productRefGroup = D04C87751DA68C9000AF7C7D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D009B0371DABB91300CFD3FE /* Products */;
+					ProjectRef = D009B0361DABB91300CFD3FE /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D04C87731DA68C9000AF7C7D /* SnapFire */,
@@ -119,12 +184,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		D009B03B1DABB91300CFD3FE /* Pods_SnapFire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_SnapFire.framework;
+			remoteRef = D009B03A1DABB91300CFD3FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		D04C87721DA68C9000AF7C7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D04C87821DA68C9000AF7C7D /* LaunchScreen.storyboard in Resources */,
+				D04C878A1DA68F4600AF7C7D /* GoogleService-Info.plist in Resources */,
 				D04C877F1DA68C9000AF7C7D /* Assets.xcassets in Resources */,
 				D04C877D1DA68C9000AF7C7D /* Main.storyboard in Resources */,
 			);
@@ -132,13 +208,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A72FE9BD3B3260734433D91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnapFire/Pods-SnapFire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BA40E5179C173B087A3939D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE1E293C4E18C40B018DFD79 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnapFire/Pods-SnapFire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D04C87701DA68C9000AF7C7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04C877A1DA68C9000AF7C7D /* ViewController.swift in Sources */,
+				D04C877A1DA68C9000AF7C7D /* TurnUpViewController.swift in Sources */,
+				D0754E561DABC8D200D7F6D7 /* PictureViewController.swift in Sources */,
+				D0754E581DABEFBD00D7F6D7 /* UsersViewController.swift in Sources */,
 				D04C87781DA68C9000AF7C7D /* AppDelegate.swift in Sources */,
+				D0754E531DABC4C400D7F6D7 /* SnapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +386,7 @@
 		};
 		D04C87871DA68C9000AF7C7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5692D7EA1ABC0ADD6286165C /* Pods-SnapFire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z258W9QL44;
@@ -272,6 +400,7 @@
 		};
 		D04C87881DA68C9000AF7C7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE16039DC61BEB05D607D85A /* Pods-SnapFire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z258W9QL44;
@@ -302,6 +431,7 @@
 				D04C87881DA68C9000AF7C7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
