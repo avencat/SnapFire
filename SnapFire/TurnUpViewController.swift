@@ -20,26 +20,36 @@ class TurnUpViewController: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.hideKeyboardWhenTappedAround()
+    
     loginTextField.delegate = self
     passTextField.delegate = self
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    turnUpButton.isEnabled = true
+  }
+  
   @IBAction func turnUpTapped(_ sender: AnyObject) {
     
-    FIRAuth.auth()?.signIn(withEmail: loginTextField.text!, password: passTextField.text!, completion: { (user, error) in
-      if error != nil {
-        FIRAuth.auth()?.createUser(withEmail: self.loginTextField.text!, password: self.passTextField.text!, completion: { (user, error) in
-          if error != nil {
-            print("Hey we have an error: \(error)")
-          } else {
-            FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
-            self.performSegue(withIdentifier: "turnUpSegue", sender: nil)
-          }
-        })
-      } else {
-        self.performSegue(withIdentifier: "turnUpSegue", sender: nil)
-      }
-    })
+    if loginTextField.text != "" && passTextField.text != "" {
+      turnUpButton.isEnabled = false
+      
+      FIRAuth.auth()?.signIn(withEmail: loginTextField.text!, password: passTextField.text!, completion: { (user, error) in
+        if error != nil {
+          FIRAuth.auth()?.createUser(withEmail: self.loginTextField.text!, password: self.passTextField.text!, completion: { (user, error) in
+            if error != nil {
+              print("Hey we have an error: \(error)")
+            } else {
+              FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
+              self.performSegue(withIdentifier: "turnUpSegue", sender: nil)
+            }
+          })
+        } else {
+          self.performSegue(withIdentifier: "turnUpSegue", sender: nil)
+        }
+      })
+    }
     
   }
   
