@@ -13,4 +13,5 @@ class Snap {
   var sender = ""
   var description = ""
   var imageUrl = ""
+  var imageUUID = ""
 }

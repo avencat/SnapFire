@@ -16,7 +16,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
   @IBOutlet weak var nextButton: UIButton!
   
   var imagePicker = UIImagePickerController()
-  
+  let uuid = NSUUID().uuidString
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -38,7 +39,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
     
-    imagesDir.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil) { (metadata, error) in
+    imagesDir.child("\(uuid).jpg").put(imageData, metadata: nil) { (metadata, error) in
       if error != nil {
         print("We have an error: \(error)")
       } else {
@@ -52,6 +53,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     nextVC.imageURL = sender as! String
     nextVC.imageDescription = descriptionTextField.text!
+    nextVC.uuid = uuid
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

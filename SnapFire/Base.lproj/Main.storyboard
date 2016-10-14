@@ -247,6 +247,13 @@
                             <constraint firstItem="084-fF-gbN" firstAttribute="leading" secondItem="sDK-Cj-zr8" secondAttribute="leading" id="laz-nh-esY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="t7i-o0-OMq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="X9x-QN-Pq9">
+                            <connections>
+                                <action selector="doneTapped:" destination="TRq-SN-Dqy" id="qTf-wY-WnC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="usersTableView" destination="084-fF-gbN" id="xpU-7U-9bc"/>
                     </connections>

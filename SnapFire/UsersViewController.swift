@@ -19,6 +19,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
   var imageURL = ""
   var imageDescription = ""
+  var uuid = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,8 +54,13 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let user = users[indexPath.row]
     
-    let snap = ["from": (FIRAuth.auth()?.currentUser?.email!)!, "description": imageDescription, "imageURL": imageURL]
+    let snap = ["from": (FIRAuth.auth()?.currentUser?.email!)!, "description": imageDescription, "imageURL": imageURL, "imageUUID": uuid]
     
     FIRDatabase.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
   }
+
+  @IBAction func doneTapped(_ sender: AnyObject) {
+    navigationController!.popToRootViewController(animated: true)
+  }
+
 }
