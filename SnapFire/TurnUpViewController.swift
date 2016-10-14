@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class TurnUpViewController: UIViewController, UITextFieldDelegate {
   
@@ -31,6 +32,7 @@ class TurnUpViewController: UIViewController, UITextFieldDelegate {
           if error != nil {
             print("Hey we have an error: \(error)")
           } else {
+            FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
             self.performSegue(withIdentifier: "turnUpSegue", sender: nil)
           }
         })

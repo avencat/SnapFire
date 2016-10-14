@@ -38,13 +38,20 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
     
-    imagesDir.child("images.png").put(imageData, metadata: nil) { (metadata, error) in
+    imagesDir.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil) { (metadata, error) in
       if error != nil {
         print("We have an error: \(error)")
       } else {
-        self.performSegue(withIdentifier: "selectUsersSegue", sender: nil)
+        self.performSegue(withIdentifier: "selectUsersSegue", sender: metadata?.downloadURL()?.absoluteString)
       }
     }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let nextVC = segue.destination as! UsersViewController
+    
+    nextVC.imageURL = sender as! String
+    nextVC.imageDescription = descriptionTextField.text!
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

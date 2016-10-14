@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SnapFire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T03-Xy-bsw">
@@ -73,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="139"/>
+            <point key="canvasLocation" x="713" y="139"/>
         </scene>
         <!--Snaps View Controller-->
         <scene sceneID="4ej-a0-hpP">
@@ -84,7 +85,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZrR-yd-vJx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aYx-EI-JSH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-Lw-hiQ">
@@ -111,10 +112,56 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="snapsTableView" destination="KUp-Lw-hiQ" id="iWO-Go-8JA"/>
+                        <segue destination="7JU-rf-6km" kind="show" identifier="receivedSnapSegue" id="YhX-Xg-B3G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSH-ks-o3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047" y="139"/>
+        </scene>
+        <!--Received Snap View Controller-->
+        <scene sceneID="Vrh-GB-p9Z">
+            <objects>
+                <viewController id="7JU-rf-6km" customClass="ReceivedSnapViewController" customModule="SnapFire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQT-sp-t6S"/>
+                        <viewControllerLayoutGuide type="bottom" id="yeu-89-ixJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Ad-sy-9Qm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="139-Bg-QfK"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy1-f2-tr1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5yB-QH-m2c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="139-Bg-QfK" secondAttribute="trailing" id="AMy-Xp-zft"/>
+                            <constraint firstItem="Gy1-f2-tr1" firstAttribute="leading" secondItem="8Ad-sy-9Qm" secondAttribute="leadingMargin" constant="5" id="D03-xs-gBK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gy1-f2-tr1" secondAttribute="trailing" constant="5" id="ePQ-0j-bdT"/>
+                            <constraint firstItem="139-Bg-QfK" firstAttribute="leading" secondItem="8Ad-sy-9Qm" secondAttribute="leadingMargin" id="fpj-cX-1JB"/>
+                            <constraint firstItem="Gy1-f2-tr1" firstAttribute="top" secondItem="139-Bg-QfK" secondAttribute="bottom" constant="20" id="gl7-Sp-Hig"/>
+                            <constraint firstItem="139-Bg-QfK" firstAttribute="top" secondItem="zQT-sp-t6S" secondAttribute="bottom" constant="10" id="qtv-NU-DvL"/>
+                            <constraint firstItem="yeu-89-ixJ" firstAttribute="top" secondItem="Gy1-f2-tr1" secondAttribute="bottom" constant="20" id="sSf-P3-G9E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Gy1-f2-tr1" id="ck0-Ga-Pw3"/>
+                        <outlet property="imageView" destination="139-Bg-QfK" id="qKl-W9-Epe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbm-k4-raa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045.625" y="796.47887323943667"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="9Zj-qr-0zw">
@@ -125,7 +172,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vwD-pJ-AIZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pdj-O8-Kdj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="07D-HI-k6d">
@@ -174,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ske-mD-18T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="139"/>
+            <point key="canvasLocation" x="2716" y="139"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="3sg-Sb-Ne6">
@@ -185,7 +232,7 @@
                         <viewControllerLayoutGuide type="bottom" id="z2Q-gj-nye"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sDK-Cj-zr8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="084-fF-gbN">
@@ -206,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmv-6r-FEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3434" y="139"/>
+            <point key="canvasLocation" x="3380" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ssi-3u-P7x">
@@ -224,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bJ-U6-QxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328.8" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1372" y="139"/>
         </scene>
     </scenes>
 </document>
