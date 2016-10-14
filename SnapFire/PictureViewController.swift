@@ -20,10 +20,12 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
   var originalButtonsColor = UIColor.clear
   
   var imagePicker = UIImagePickerController()
-  let uuid = NSUUID().uuidString
+  var uuid = ""
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.hideKeyboardWhenTappedAround()
     
     imagePicker.delegate = self
     
@@ -55,9 +57,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
   
   @IBAction func nextButtonTapped(_ sender: AnyObject) {
 
-    print("nextButtonEnabledColor = \(nextButton.tintColor) && \(nextButton.isEnabled)")
     nextButton.isEnabled = false
-    print("nextButtonDisabledColor = \(nextButton.tintColor) && \(nextButton.isEnabled)")
     
     navigationController?.navigationBar.isUserInteractionEnabled = false
     navigationController?.navigationBar.tintColor = UIColor.init(colorLiteralRed: 0.82, green: 0.82, blue: 0.82, alpha: 1)
@@ -94,10 +94,21 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     imageView.backgroundColor = UIColor.clear
     
-    
-    
     imagePicker.dismiss(animated: true, completion: nil)
     
+    uuid = NSUUID().uuidString
+    
     nextButton.isEnabled = true
+  }
+}
+
+extension UIViewController {
+  func hideKeyboardWhenTappedAround() {
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+    view.addGestureRecognizer(tap)
+  }
+  
+  func dismissKeyboard() {
+    view.endEditing(true)
   }
 }

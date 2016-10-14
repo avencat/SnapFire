@@ -76,6 +76,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     if snaps.count == 0 {
       cell.textLabel?.text = "You have no snaps ! ☹️"
+      cell.textLabel?.textAlignment = .center
     } else {
       cell.textLabel?.text = snaps[indexPath.row].sender
     }
