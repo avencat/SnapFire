@@ -34,8 +34,6 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
       
       self.snaps.append(snap)
       
-      print("mySnap = \(snap.description)")
-      
       self.snapsTableView.reloadData()
     })
 
@@ -65,13 +63,22 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    if snaps.count == 0 {
+      return 1
+    }
+    
     return snaps.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
     
-    cell.textLabel?.text = snaps[indexPath.row].sender
+    if snaps.count == 0 {
+      cell.textLabel?.text = "You have no snaps ! ☹️"
+    } else {
+      cell.textLabel?.text = snaps[indexPath.row].sender
+    }
     
     return cell
   }

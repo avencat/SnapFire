@@ -13,12 +13,16 @@ import FirebaseStorage
 
 class ReceivedSnapViewController: UIViewController {
   
+  @IBOutlet weak var overlay: UIView!
+  @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
   @IBOutlet weak var imageView: UIImageView!
+  
   @IBOutlet weak var descriptionLabel: UILabel!
-
+  
   var snap : Snap?
   var usersUID: [String] = []
   var isRemovable = true
+  var originalButtonsColor = UIColor.clear
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,13 +30,28 @@ class ReceivedSnapViewController: UIViewController {
     descriptionLabel.text = snap?.description
     descriptionLabel.numberOfLines = 0
     descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-    imageView.image = UIImage(data: NSData(contentsOf: URL(string: (snap?.imageUrl)!)!) as! Data)
     
     FIRDatabase.database().reference().child("users").observe(FIRDataEventType.childAdded, with: { (snapshot) in
       
       self.usersUID.append(snapshot.key)
       
     })
+    
+    originalButtonsColor = (navigationController?.navigationBar.tintColor)!
+    
+    navigationController?.navigationBar.isUserInteractionEnabled = false
+    navigationController?.navigationBar.tintColor = UIColor(colorLiteralRed: 0.82, green: 0.82, blue: 0.82, alpha: 1)
+    
+    loadingWheel.startAnimating()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    imageView.image = UIImage(data: NSData(contentsOf: URL(string: (snap?.imageUrl)!)!) as! Data)
+    overlay.removeFromSuperview()
+    loadingWheel.hidesWhenStopped = true
+    loadingWheel.stopAnimating()
+    navigationController?.navigationBar.isUserInteractionEnabled = true
+    navigationController?.navigationBar.tintColor = originalButtonsColor
   }
   
   override func viewWillDisappear(_ animated: Bool) {
